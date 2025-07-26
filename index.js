@@ -23,7 +23,7 @@ app.post("/api/upload/", async (req, res) => {
     res.send(docId);
 });
 
-app.get("/api/retrive/:id", async (req, res) => {
+app.get("/api/retrieve/:id", async (req, res) => {
     const { id }= req.params;
     const data = await getData(id);
     res.send(data);
