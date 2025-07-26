@@ -8,13 +8,10 @@ const app = express();
 app.use(express.json());
 initializeFirebaseApp();
 
-app.post("/", (req, res) => {
-    console.log(req.body);
-    res.send("yello");
-});
-
-app.get("/", (req, res) => {
-    res.send("yello");
+app.get("/:id", async (req, res) => {
+    const { id }= req.params;
+    const redirectURL = await getData(id)
+    res.redirect(redirectURL);
 });
 
 app.post("/api/upload/", async (req, res) => {
