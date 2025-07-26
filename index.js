@@ -8,8 +8,13 @@ const app = express();
 app.use(express.json());
 initializeFirebaseApp();
 
+app.get("/", async (req, res) => {
+    console.log("no id");
+    res.send(`<a href="https://github.com/Keeraxm/aurl">Refer to github-page for instructions</a>`)
+});
+
 app.get("/:id", async (req, res) => {
-    const { id }= req.params;
+    const { id } = req.params || null;
     const redirectURL = await getData(id)
     res.redirect(redirectURL);
 });
@@ -20,11 +25,12 @@ app.post("/api/upload/", async (req, res) => {
     res.send(docId);
 });
 
-app.get("/api/retrieve/:id", async (req, res) => {
-    const { id }= req.params;
-    const data = await getData(id);
-    res.send(data);
-});
+// obsolete:
+// app.get("/api/retrieve/:id", async (req, res) => {
+//     const { id }= req.params;
+//     const data = await getData(id);
+//     res.send(data);
+// });
 
 app.listen(PORT, function(err) {
     if (err) console.logs(err);
