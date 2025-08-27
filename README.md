@@ -30,7 +30,9 @@ const response = UrlFetchApp.fetch("https://aurl.keeraxm.com/api/upload", option
 Note that the url has to contain **https://** for the redirect to work properly.
 
 
-## [aurl.keeraxm.com/:id](https://aurl.keeraxm.com/:id)
+```sh
+https://aurl.keeram.com/:id
+```
 Simply append any valid abbreviation-key and the get request will redirect you to the corresponding url. <br>
 **Example**<br>
 `https://aurl.keeraxm.com/xtzKIGfGLaoazgfbDPnJ` redirects to `https://google.com`
