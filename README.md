@@ -8,7 +8,9 @@ Appending the abbreviation-key to [**aurl.keeraxm.com/\<abbreviation-key here>**
 ## api
 The api lets you post and get redirect urls.
 
-## [aurl.keeraxm.com/api/upload](https://aurl.keeraxm.com/api/upload)
+```sh
+https://aurl.keeram.com/api/upload
+```
 Is a **POST method** that expects a JSON object in the body with "url" as the key and a url-string as the value. <br>
 The return value is the string used to reference the url. <br>
 **Example using google scripts:** <br>
